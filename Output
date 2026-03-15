@@ -1,0 +1,144 @@
+(.venv) samuelmoores@Samuels-iMac BiteOfDistributedCommunication % docker logs 6436882635ff
+--- Round 1 ---
+Connected to server1:5000
+Response from server1: Hello from server!
+
+Disconnected from server1
+
+Connected to server2:5000
+Response from server2: Hello from server!
+
+Disconnected from server2
+
+Connected to server3:5000
+Response from server3: Hello from server!
+
+Disconnected from server3
+
+--- Round 2 ---
+Connected to server1:5000
+Response from server1: Hello from server!
+
+Disconnected from server1
+
+Connected to server2:5000
+Response from server2: Hello from server!
+
+Disconnected from server2
+
+Connected to server3:5000
+Response from server3: Hello from server!
+
+Disconnected from server3
+
+--- Round 3 ---
+Connected to server1:5000
+Response from server1: Hello from server!
+
+Disconnected from server1
+
+Connected to server2:5000
+Response from server2: Hello from server!
+
+Disconnected from server2
+
+Connected to server3:5000
+Response from server3: Hello from server!
+
+Disconnected from server3
+
+--- Round 4 ---
+Connected to server1:5000
+Response from server1: Hello from server!
+
+Disconnected from server1
+
+Connected to server2:5000
+Response from server2: Hello from server!
+
+Disconnected from server2
+
+Connected to server3:5000
+Response from server3: Hello from server!
+
+Disconnected from server3
+
+--- Round 5 ---
+Connected to server1:5000
+Response from server1: Hello from server!
+
+Disconnected from server1
+
+Connected to server2:5000
+Response from server2: Hello from server!
+
+Disconnected from server2
+
+Connected to server3:5000
+Response from server3: Hello from server!
+
+Disconnected from server3
+
+--- Round 6 ---
+Connected to server1:5000
+Response from server1: Hello from server!
+
+Disconnected from server1
+
+Connected to server2:5000
+Response from server2: Hello from server!
+
+Disconnected from server2
+
+Connected to server3:5000
+Response from server3: Hello from server!
+
+Disconnected from server3
+
+--- Round 7 ---
+Connected to server1:5000
+Response from server1: Hello from server!
+
+Disconnected from server1
+
+Connected to server2:5000
+Response from server2: Hello from server!
+
+Disconnected from server2
+
+Connected to server3:5000
+Response from server3: Hello from server!
+
+Disconnected from server3
+
+--- Round 8 ---
+Connected to server1:5000
+Response from server1: Hello from server!
+
+Disconnected from server1
+
+Connected to server2:5000
+Response from server2: Hello from server!
+
+Disconnected from server2
+
+Connected to server3:5000
+Response from server3: Hello from server!
+
+Disconnected from server3
+
+--- Round 9 ---
+Connected to server1:5000
+Response from server1: Hello from server!
+
+Disconnected from server1
+
+Connected to server2:5000
+Response from server2: Hello from server!
+
+Disconnected from server2
+
+Connected to server3:5000
+Response from server3: Hello from server!
+
+Disconnected from server3

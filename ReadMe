@@ -1,0 +1,3 @@
+Run docker desktop
+open terminal and run: docker exec -it 6436882635ff tcpdump -i eth0 tcp port 5000
+open another new terminal to see logs and run: docker logs 6436882635ff
