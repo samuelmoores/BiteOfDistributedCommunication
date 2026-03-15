@@ -1,33 +1,14 @@
 services:
-  server1:
+  anycast_server:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "5001:5000"
-
-  server2:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "5002:5000"
-
-  server3:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "5003:5000"
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
+    deploy:
+      replicas: 3
 
   client:
     build:
       context: .
       dockerfile: Dockerfile.client
     depends_on:
-      - server1
-      - server2
-      - server3
+      - anycast_server
