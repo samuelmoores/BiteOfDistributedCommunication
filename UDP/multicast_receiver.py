@@ -26,7 +26,7 @@ sock.bind((UDP_IP, UDP_PORT)) #Connect to socket we just created
 
 #Set timer
 end_time = time.time() + duration
-sock.settimeout(duration) #Set timeout length to be duration
+sock.settimeout(max(duration/10, 1)) #Set timeout length to be duration to be short as we will loop
 
 # I stole this from Sam, I figure we'll need it later | Set SERVER_NAME in docker-compose or default to hostname
 name = os.environ.get('SERVER_NAME', socket.gethostname())
@@ -34,16 +34,12 @@ name = os.environ.get('SERVER_NAME', socket.gethostname())
 
 def listen():
     print(f"Server {name} listening on port {UDP_PORT}")
-    try:
-        while time.time() < end_time:
+    while time.time() < end_time:
+        try:
             data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes. We yield here
             print("received message: %s" % data) #CHANGE WHEN IMPLEMENTING RECEIVES
-
-    #We reach a timeout, exit
-    except socket.timeout:
-        print(f"{name} timed out")
-    except Exception:
-        print(f"Error: {Exception}")
+        except socket.timeout:
+            pass #We don't care, keep going
 
     #While loop complete or error occured
     print(f"Closing socket: {name}")
