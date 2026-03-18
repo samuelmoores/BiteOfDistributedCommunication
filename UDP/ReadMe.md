@@ -1,0 +1,10 @@
+if not already installed, install docker or docker desktop
+
+to build and run: docker-compose up --build
+
+to stop: docker-compose down
+
+to run: docker-compose up
+
+to see running containers: docker ps
+to see images: docker images

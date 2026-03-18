@@ -1,0 +1,51 @@
+services:
+  # Sender 1 - sends JSON + bin. data
+  sender1:
+    build: .
+    command: python3 multicast_sender.py
+    networks:
+      - multicast-net
+
+  # Sender 2 - second source (helpful for looking at tcp dumps)
+  sender2:
+    build: .
+    command: python3 multicast_sender.py
+    networks:
+      - multicast-net
+
+
+  # Instructions state to have multiple recievers so made 3 recievers but more can be easily made by just copying
+  # the structure and changing the names
+  
+  # Receiver 1
+  receiver1:
+    build: . 
+    command: python3 multicast_receiver.py --duration 30
+    environment:
+      - SERVER_NAME=receiver1
+    networks:
+      - multicast-net
+
+  # Receiver 2
+  receiver2:
+    build: .
+    command: python3 multicast_receiver.py --duration 30
+    environment:
+      - SERVER_NAME=receiver2
+    networks:
+      - multicast-net
+
+
+  # Reciever 3
+  receiver3:
+    build: .
+    command: python3 multicast_receiver.py --duration 30
+    environment:
+      - SERVER_NAME=receiver3
+    networks:
+      - multicast-net
+
+networks:
+  multicast-net:
+    driver: bridge
+    # Docker bridge networks support multicast by default - no extra options needed
