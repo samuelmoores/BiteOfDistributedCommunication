@@ -3,6 +3,8 @@ services:
   sender1:
     build: .
     command: python3 multicast_sender.py
+    environment:
+      - Sender_Name=sender1
     networks:
       - multicast-net
 
@@ -10,6 +12,8 @@ services:
   sender2:
     build: .
     command: python3 multicast_sender.py
+    environment:
+      - Sender_Name=sender2
     networks:
       - multicast-net
 
@@ -35,8 +39,7 @@ services:
     networks:
       - multicast-net
 
-
-  # Reciever 3
+  # Receiver 3
   receiver3:
     build: .
     command: python3 multicast_receiver.py --duration 30
@@ -49,3 +52,4 @@ networks:
   multicast-net:
     driver: bridge
     # Docker bridge networks support multicast by default - no extra options needed
+

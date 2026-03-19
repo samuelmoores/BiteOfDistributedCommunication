@@ -11,13 +11,11 @@ duration = 5
 
 #Read argument
 parser = argparse.ArgumentParser()
-parser.add_argument("--duration", help="Maximum length between receives before")
+parser.add_argument("--duration", help="Maximum time to listen (seconds)")
 args = parser.parse_args() #args will contain our args
 
 #Check if "duration" was given a value
-duration = 10 #Default value
-if args.duration is not None:
-    duration = int(args.duration)
+duration = int(args.duration) if args.duration else 10
 
 #Create Socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # (Internet, UDP)
@@ -48,10 +46,13 @@ def listen():
             data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes. We yield here
             #print("received message: %s" % data) #CHANGE WHEN IMPLEMENTING RECEIVES
             try:
-                decoded = data.decode('utf-8')
-                print(f"Recieved from {addr}: {decoded}")
+                decoded = data.decode('utf-8') # if decoded txt contains npc, treat as bin
+                if decoded.isprintable():
+                    print(f"Recieved TXT/JSON from {addr}: {decoded}")
+                else:
+                    print(f"Received from {addr}: {decoded}")
             except UnicodeDecodeError:
-                print(f"Recieved binary from {addr}: {data}")
+                print(f"Received binary from {addr}: {data}")
         except socket.timeout:
             pass # keep going
 
