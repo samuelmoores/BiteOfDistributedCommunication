@@ -1,131 +1,108 @@
-[+] up 10/10
- ✔ Image udpproject-receiver2       Built                                                                                                                      2.9s
- ✔ Image udpproject-receiver3       Built                                                                                                                      2.9s
- ✔ Image udpproject-sender1         Built                                                                                                                      2.9s
- ✔ Image udpproject-sender2         Built                                                                                                                      2.9s
- ✔ Image udpproject-receiver1       Built                                                                                                                      2.9s
- ✔ Container udpproject-sender1-1   Recreated                                                                                                                  0.5s
- ✔ Container udpproject-receiver1-1 Recreated                                                                                                                  0.5s
- ✔ Container udpproject-receiver3-1 Recreated                                                                                                                  0.5s
- ✔ Container udpproject-receiver2-1 Recreated                                                                                                                  0.3s
- ✔ Container udpproject-sender2-1   Recreated                                                                                                                  0.5s
-Attaching to receiver1-1, receiver2-1, receiver3-1, sender1-1, sender2-1
-sender1-1  | UDP target IP: 224.1.1.1
-sender1-1  | UDP target port: 5007
-sender1-1  | Sent JSON: {'Sensor': 'temp', 'value': 23.5}                                                                                                          
-sender1-1  | Sent JSON: {'Sensor': 'humidity', 'value': 45.0}
-                                                                                                                                                                   
+ ✔ Image udpproject-receiver1       Built                                                                           2.0s
+ ✔ Image udpproject-receiver2       Built                                                                           2.0s
+ ✔ Image udpproject-receiver3       Built                                                                           2.0s
+ ✔ Container udpproject-receiver2-1 Recreated                                                                       0.3s
+ ✔ Container udpproject-receiver3-1 Recreated                                                                       0.3s
+ ✔ Container udpproject-receiver1-1 Recreated                                                                       0.3s
+Attaching to receiver1-1, receiver2-1, receiver3-1
 receiver1-1  | Joined multicast group
-                                                                                                                                                                   
-                                                                                                                                                                   
-sender2-1    | UDP target IP: 224.1.1.1
-                                                                                                                                                                   
-sender1-1    | Sent Binary Data: b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t'
-                                                                                                                                                                   
 receiver1-1  | Server receiver1 listening on port 5007
-sender2-1    | UDP target port: 5007
-v View in Docker Desktop   o View Config   w Enable Watch   d Detach
-
-sender2-1    | Sent JSON: {'Sensor': 'temp', 'value': 23.5}
 receiver3-1  | Joined multicast group
+receiver3-1  | Server receiver3 listening on port 5007
 receiver2-1  | Joined multicast group
-sender1-1    | All messages should be sucessfully sent
-
-receiver2-1  | Joined multicast group
-sender1-1    | All messages should be sucessfully sent
-
-
-
-sender1-1    | All messages should be sucessfully sent
-
-
-
-
-
-
-
-
-receiver3-1  | Server receiver3 listening on port 5007
-
-receiver3-1  | Server receiver3 listening on port 5007
-
-receiver3-1  | Server receiver3 listening on port 5007
-
-
-
-
-
-
-
-
-
-sender2-1    | Sent JSON: {'Sensor': 'humidity', 'value': 45.0}
 receiver2-1  | Server receiver2 listening on port 5007
 
-sender2-1    | Sent Binary Data: b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t'
 
-
-receiver2-1  | Server receiver2 listening on port 5007
-
-sender2-1    | Sent Binary Data: b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t'
-
-
-sender2-1    | All messages should be sucessfully sent
-sender1-1 exited with code 0
-
-sender2-1    | Sent Binary Data: b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t'
-
-
-sender2-1    | All messages should be sucessfully sent
-sender1-1 exited with code 0
-
-sender2-1    | All messages should be sucessfully sent
-sender1-1 exited with code 0
-sender2-1    | All messages should be sucessfully sent
-sender1-1 exited with code 0
-sender1-1 exited with code 0
+receiver1-1  | Recieved: {"Sensor": "temp", "value": 23.5} from ('172.20.0.5', 39536)
+receiver3-1  | Recieved: {"Sensor": "temp", "value": 23.5} from ('172.20.0.5', 39536)
 
 
 
 
+receiver2-1  | Recieved: {"Sensor": "temp", "value": 23.5} from ('172.20.0.5', 39536)
+receiver1-1  | Recieved: {"Sensor": "humidity", "value": 45.0} from ('172.20.0.5', 39536)
+receiver3-1  | Recieved: {"Sensor": "humidity", "value": 45.0} from ('172.20.0.5', 39536)
+
+receiver2-1  | Recieved: {"Sensor": "humidity", "value": 45.0} from ('172.20.0.5', 39536)
+
+
+receiver1-1  | Recieved:         from ('172.20.0.5', 39536)
+receiver2-1  | Recieved:         from ('172.20.0.5', 39536)
+receiver3-1  | Recieved:         from ('172.20.0.5', 39536)
+receiver2-1  | Recieved: {"Sensor": "temp", "value": 23.5} from ('172.20.0.6', 47973)
+receiver1-1  | Recieved: {"Sensor": "temp", "value": 23.5} from ('172.20.0.6', 47973)
+
+
+receiver3-1  | Recieved: {"Sensor": "temp", "value": 23.5} from ('172.20.0.6', 47973)
+
+
+receiver1-1  | Recieved: {"Sensor": "humidity", "value": 45.0} from ('172.20.0.6', 47973)
+
+
+receiver3-1  | Recieved: {"Sensor": "humidity", "value": 45.0} from ('172.20.0.6', 47973)
+receiver1-1  | Recieved:         from ('172.20.0.6', 47973)
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+receiver2-1  | Recieved:         from ('172.20.0.6', 47973)
 receiver2-1  | Leaving multicast group
-
-
-
-
-
-
-receiver3-1  | Leaving multicast group                                                                                                                             
-
-                                                                                                                                                                   
-receiver1-1  | Closing socket: receiver1
 receiver2-1  | Closing socket: receiver2
-receiver3-1  | Closing socket: receiver3
-                                                                                                                                                                   
-                                                                                                                                                                   
-v View in Docker Desktop   o View Config   w Enable Watch   d Detach
-                                                                                                                                                                   
 receiver2-1  | receiver2 closed
+receiver3-1  | Leaving multicast group
+
+
+receiver3-1  | Closing socket: receiver3
+receiver1-1  | Leaving multicast group
+
+
+
+
 receiver3-1  | receiver3 closed
+receiver1-1  | Closing socket: receiver1
 receiver1-1  | receiver1 closed
-                                                                                                                                                                   
 receiver2-1 exited with code 0
-receiver1-1 exited with code 0
 receiver3-1 exited with code 0
+receiver1-1 exited with code 0
+
+[+] up 2/2
+ ✔ Container udpproject-sender2-1 Recreated                                                                         0.3s
+ ✔ Container udpproject-sender1-1 Recreated                                                                         0.3s
+Attaching to sender1-1, sender2-1
+sender1-1  | sender1 target IP: 224.1.1.1
+sender1-1  | sender1 target port: 5007
+sender1-1  | sender1 sent JSON: {'Sensor': 'temp', 'value': 23.5}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sender2-1  | sender2 target IP: 224.1.1.1
+
+
+sender2-1  | sender2 target port: 5007
+
+
+sender1-1  | sender1 sent JSON: {'Sensor': 'humidity', 'value': 45.0}
+sender2-1  | sender2 sent JSON: {'Sensor': 'temp', 'value': 23.5}
+
+
+sender2-1  | sender2 sent JSON: {'Sensor': 'humidity', 'value': 45.0}
+sender1-1  | sender1 sent binary data: b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t'
+sender2-1  | sender2 sent binary data: b'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t'
+
+sender1-1  | sender1 finished sending
+sender2-1  | sender2 finished sending
+sender1-1 exited with code 0
+sender2-1 exited with code 0

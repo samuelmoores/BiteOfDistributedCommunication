@@ -4,7 +4,7 @@ services:
     build: .
     command: python3 multicast_sender.py
     environment:
-      - Sender_Name=sender1
+      - SERVER_NAME=sender1
     networks:
       - multicast-net
 
@@ -13,7 +13,7 @@ services:
     build: .
     command: python3 multicast_sender.py
     environment:
-      - Sender_Name=sender2
+      - SERVER_NAME=sender2
     networks:
       - multicast-net
 
@@ -51,5 +51,8 @@ services:
 networks:
   multicast-net:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
     # Docker bridge networks support multicast by default - no extra options needed
 

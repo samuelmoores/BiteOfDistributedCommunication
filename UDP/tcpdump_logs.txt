@@ -1,0 +1,8 @@
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+07:44:37.131125 IP 172.20.0.5.39536 > 224.1.1.1.5007: UDP, length 33
+07:44:37.131418 IP 172.20.0.5.39536 > 224.1.1.1.5007: UDP, length 37
+07:44:37.131628 IP 172.20.0.5.39536 > 224.1.1.1.5007: UDP, length 10
+07:44:37.164403 IP 172.20.0.6.47973 > 224.1.1.1.5007: UDP, length 33
+07:44:37.164726 IP 172.20.0.6.47973 > 224.1.1.1.5007: UDP, length 37
+07:44:37.164910 IP 172.20.0.6.47973 > 224.1.1.1.5007: UDP, length 10

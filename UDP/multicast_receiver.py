@@ -26,6 +26,7 @@ sock.bind(('', UDP_PORT)) #Connect to socket we just created
 
 
 # Multicast Group (joining part)
+brig_IP = "172.20.0.1" # for docker bridge getway
 mreq = struct.pack("4sL", socket.inet_aton(UDP_IP), socket.INADDR_ANY)
 sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 print("Joined multicast group")
@@ -47,10 +48,7 @@ def listen():
             #print("received message: %s" % data) #CHANGE WHEN IMPLEMENTING RECEIVES
             try:
                 decoded = data.decode('utf-8') # if decoded txt contains npc, treat as bin
-                if decoded.isprintable():
-                    print(f"Recieved TXT/JSON from {addr}: {decoded}")
-                else:
-                    print(f"Received from {addr}: {decoded}")
+                print(f"Recieved: {decoded} from {addr}")
             except UnicodeDecodeError:
                 print(f"Received binary from {addr}: {data}")
         except socket.timeout:
