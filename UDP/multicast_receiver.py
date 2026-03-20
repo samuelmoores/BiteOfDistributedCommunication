@@ -45,6 +45,7 @@ def listen():
     while time.time() < end_time:
         try:
             data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes. We yield here
+            #print("received message: %s" % data) #CHANGE WHEN IMPLEMENTING RECEIVES
             try:
                 decoded = data.decode('utf-8') # if decoded txt contains npc, treat as bin
                 print(f"Recieved: {decoded} from {addr}")
