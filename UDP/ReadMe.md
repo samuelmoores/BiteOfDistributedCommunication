@@ -6,7 +6,7 @@ Step 1:
     docker-compose up --build receiver1 receiver2 receiver3
 Step 2: 
     Run the tcpdump inside one receiver (second terminal) (within 5 seconds of running step 1):
-    docker exec -it udpproject-receiver1-1 tcpdump -i eth0 udp port 5007 -nn
+    docker exec -it udp-receiver1-1 tcpdump -i eth0 udp port 5007 -nn
 Step 3:
     In third terminal start the senders (third terminal) (within 10-15 sec of running step 2):
     docker-compose up sender1 sender2
