@@ -8,3 +8,5 @@ to run: docker-compose up
 
 to see running containers: docker ps
 to see images: docker images
+
+to capture tcp logs: docker exec -it tcp-anycast_server-1 tcpdump -i eth0 tcp port 5000 -nn
