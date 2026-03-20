@@ -1,7 +1,6 @@
 #This is out client script
 import socket
 import json
-import time
 import os
 
 UDP_IP = "224.1.1.1" #  "127.0.0.1" before, "224.1.1.1" now
